@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="book-page wrap">
+  <a class="back" href="{{ '/' | relative_url }}#books">&larr; All books</a>
+  <div class="book-detail">
+    <div class="cover-col">
+      <img class="cover" src="{{ page.cover | relative_url }}" alt="Cover of {{ page.title }}">
+    </div>
+    <div class="info-col">
+      {% if page.series %}<p class="series">{{ page.series }}</p>{% endif %}
+      <h1>{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
+      <p class="meta">
+        {% if page.genre %}{{ page.genre }}{% endif %}
+        {% if page.genre and page.date %} · {% endif %}
+        {% if page.date %}{{ page.date | date: "%B %Y" }}{% endif %}
+      </p>
+      <div class="blurb">
+        {{ content }}
+      </div>
+      <div class="actions">
+        {% include buy-button.html book=page %}
+      </div>
+    </div>
+  </div>
+</article>

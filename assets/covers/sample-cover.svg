@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2d3a4f"/>
+      <stop offset="1" stop-color="#9c3d2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="900" fill="url(#g)"/>
+  <circle cx="300" cy="360" r="120" fill="none" stroke="#f5efe6" stroke-width="3" opacity=".6"/>
+  <text x="300" y="640" fill="#f5efe6" font-family="Georgia, serif" font-size="58" text-anchor="middle">Sample Book</text>
+  <text x="300" y="700" fill="#f5efe6" font-family="Georgia, serif" font-size="26" text-anchor="middle" opacity=".8">Replace this cover</text>
+  <text x="300" y="830" fill="#f5efe6" font-family="Georgia, serif" font-size="30" letter-spacing="6" text-anchor="middle">YOUR NAME</text>
+</svg>

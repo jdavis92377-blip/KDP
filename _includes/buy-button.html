@@ -1,0 +1,5 @@
+{% if include.book.amazon_url and include.book.amazon_url != "" %}
+  <a class="btn" href="{{ include.book.amazon_url }}" target="_blank" rel="noopener">Buy on Amazon</a>
+{% else %}
+  <span class="btn btn-muted">Coming soon</span>
+{% endif %}

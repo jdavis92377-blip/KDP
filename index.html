@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="wrap">
+    <h1>{{ site.author_name }}</h1>
+    <p class="tagline">{{ site.tagline }}</p>
+  </div>
+</section>
+
+<section id="books" class="wrap">
+  <h2 class="section-title">Books</h2>
+  {% assign books = site.books | sort: "date" | reverse %}
+  {% if books.size == 0 %}
+    <p class="empty">New books coming soon.</p>
+  {% endif %}
+  <div class="book-list">
+    {% for book in books %}
+    <article class="book-row">
+      <a class="cover-link" href="{{ book.url | relative_url }}">
+        <img class="cover" src="{{ book.cover | relative_url }}" alt="Cover of {{ book.title }}" loading="lazy">
+      </a>
+      <div class="book-text">
+        {% if book.series %}<p class="series">{{ book.series }}</p>{% endif %}
+        <h3><a href="{{ book.url | relative_url }}">{{ book.title }}</a></h3>
+        {% if book.subtitle %}<p class="subtitle">{{ book.subtitle }}</p>{% endif %}
+        <div class="excerpt">{{ book.excerpt }}</div>
+        <div class="actions">
+          {% include buy-button.html book=book %}
+          <a class="btn btn-ghost" href="{{ book.url | relative_url }}">Read the blurb</a>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap about-inner">
+    {% if site.author_photo != "" %}
+      <img class="author-photo" src="{{ site.author_photo | relative_url }}" alt="{{ site.author_name }}">
+    {% endif %}
+    <div>
+      <h2 class="section-title">About the author</h2>
+      <p>{{ site.bio }}</p>
+      {% if site.contact_email != "" %}<p><a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a></p>{% endif %}
+    </div>
+  </div>
+</section>

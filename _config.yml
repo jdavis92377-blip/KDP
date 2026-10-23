@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────────────────────
+#  Site settings — edit these to make the site yours
+# ─────────────────────────────────────────────────────────────
+title: "Your Name, Author"
+author_name: "Your Name"
+tagline: "Stories worth staying up for."
+bio: >-
+  A short paragraph about you: what you write, where you live,
+  and what readers can expect from your books. Edit this in _config.yml.
+author_photo: ""            # optional, e.g. /assets/author.jpg
+amazon_author_url: ""       # optional, your Amazon Author Central page
+contact_email: ""           # optional
+
+# This repo is published at https://jdavis92377-blip.github.io/KDP
+# If you move to a custom domain, change baseurl to "".
+url: "https://jdavis92377-blip.github.io"
+baseurl: "/KDP"
+
+# ─────────────────────────────────────────────────────────────
+#  You shouldn't need to change anything below this line
+# ─────────────────────────────────────────────────────────────
+markdown: kramdown
+collections:
+  books:
+    output: true
+    permalink: /books/:name/
+defaults:
+  - scope:
+      path: ""
+      type: books
+    values:
+      layout: book
+exclude:
+  - README.md
+  - BOOK_TEMPLATE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
